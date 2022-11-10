@@ -1,6 +1,6 @@
 package Transports;
 
-public class Car {
+public abstract class Car {
     private String brand;
     private String model;
     private float engineVolume;
@@ -23,7 +23,7 @@ public class Car {
 
     }
 
-    public String getBrand() {
+      public String getBrand() {
         return brand;
     }
 

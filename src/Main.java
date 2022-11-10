@@ -21,6 +21,17 @@ public class Main {
         Bus bus3 = new Bus("ЛИАЗ", "2105", 0);
         Bus bus4 = new Bus("ЛИАЗ", "2105", 0);
 
+        car1.pitStop();
+        System.out.println(car2.bestLapTime());
+        System.out.println(car3.maxSpeed());
+
+        truck1.pitStop();
+        System.out.println(truck2.bestLapTime());
+        System.out.println(truck3.maxSpeed());
+
+        bus1.pitStop();
+        System.out.println(bus2.bestLapTime());
+        System.out.println(bus3.maxSpeed());
 
 
 
