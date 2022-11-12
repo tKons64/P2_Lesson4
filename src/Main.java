@@ -1,15 +1,17 @@
+import Driver.Driver;
 import Transports.Bus;
-import Transports.PassengerCar;
+import Transports.Car;
+import Transports.Transport;
 import Transports.Truck;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        PassengerCar car1 = new PassengerCar("LADA", "2105", 0);
-        PassengerCar car2 = new PassengerCar("LADA", "2105", 0);
-        PassengerCar car3 = new PassengerCar("LADA", "2105", 0);
-        PassengerCar car4 = new PassengerCar("LADA", "2105", 0);
+        Car car1 = new Car("LADA", "2105", 0);
+        Car car2 = new Car("LADA", "2105", 0);
+        Car car3 = new Car("LADA", "2105", 0);
+        Car car4 = new Car("LADA", "2105", 0);
 
         Truck truck1 = new Truck("КАМАЗ", "2105", 0);
         Truck truck2 = new Truck("КАМАЗ", "2105", 0);
@@ -33,7 +35,12 @@ public class Main {
         System.out.println(bus2.bestLapTime());
         System.out.println(bus3.maxSpeed());
 
-
+        Driver<Car> DriverCar = new Driver<>("DriverCar", 10, car1);
+        Driver<Truck> DriverTruck = new Driver<>("DriverTruck", 2, truck1);
+        Driver<Bus> DriverBus = new Driver<>("DriverBus", 7, bus1);
+        System.out.println(DriverCar);
+        System.out.println(DriverTruck);
+        System.out.println(DriverBus);
 
     }
 }

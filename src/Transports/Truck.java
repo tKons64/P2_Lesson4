@@ -1,6 +1,6 @@
 package Transports;
 
-public class Truck extends Car implements Competable{
+public class Truck extends Transport implements Competable{
     public Truck(String brand, String model, int engineVolume) {
         super(brand, model, engineVolume);
     }

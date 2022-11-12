@@ -1,59 +1,22 @@
 package Transports;
 
-public abstract class Car {
-    private String brand;
-    private String model;
-    private float engineVolume;
-
+public class Car extends Transport implements Competable{
     public Car(String brand, String model, int engineVolume) {
-        this.setBrand(brand);
-        this.setModel(model);
-        this.setEngineVolume(engineVolume);
+        super(brand, model, engineVolume);
     }
 
-    boolean parameterIsNotCorrect(String parametr) {
-        return (parametr == null || parametr.isEmpty());
+    @Override
+    public void pitStop() {
+        System.out.println("Пит-стоп");
     }
 
-    void startMoving() {
-
+    @Override
+    public int bestLapTime() {
+        return 8;
     }
 
-    void finishMoving() {
-
-    }
-
-      public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-        if (parameterIsNotCorrect(brand)) {
-            this.brand = "default";
-        }
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-        if (parameterIsNotCorrect(model)) {
-            this.model = "default";
-        }
-    }
-
-    public float getEngineVolume() {
-        return engineVolume;
-    }
-
-    public void setEngineVolume(float engineVolume) {
-        if (engineVolume <= 0) {
-            this.engineVolume = 1.5f;
-        } else {
-            this.engineVolume = engineVolume;
-        }
+    @Override
+    public int maxSpeed() {
+        return 150;
     }
 }
