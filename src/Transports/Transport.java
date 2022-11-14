@@ -11,15 +11,15 @@ public abstract class Transport {
         this.setEngineVolume(engineVolume);
     }
 
-    boolean parameterIsNotCorrect(String parametr) {
-        return (parametr == null || parametr.isEmpty());
+    private boolean parameterIsNotCorrect(String parametr) {
+        return (parametr == null || parametr.isEmpty() || parametr.isBlank());
     }
 
-    void startMoving() {
+    public void startMoving() {
         System.out.printf("Авто %s %s стартовало", getModel(), getBrand());
     }
 
-    void finishMoving() {
+    public void finishMoving() {
         System.out.printf("Авто %s %s закончило движение", getModel(), getBrand());
     }
 
@@ -28,8 +28,9 @@ public abstract class Transport {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
-        if (parameterIsNotCorrect(brand)) {
+        if (!parameterIsNotCorrect(brand)) {
+            this.brand = brand;
+        } else {
             this.brand = "default";
         }
     }

@@ -1,4 +1,6 @@
-import Driver.Driver;
+import Driver.DriverB;
+import Driver.DriverC;
+import Driver.DriverD;
 import Transports.Bus;
 import Transports.Car;
 import Transports.Transport;
@@ -8,39 +10,39 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
-        Car car1 = new Car("LADA", "2105", 0);
-        Car car2 = new Car("LADA", "2105", 0);
-        Car car3 = new Car("LADA", "2105", 0);
-        Car car4 = new Car("LADA", "2105", 0);
+        Car crLada = new Car("LADA", "2105", 0);
+        Car crKia = new Car("KIA", "Sorento", 0);
+        Car crBMW = new Car("BMW", "5", 0);
+        Car crAudi = new Car("Audi", "80", 0);
 
-        Truck truck1 = new Truck("КАМАЗ", "2105", 0);
-        Truck truck2 = new Truck("КАМАЗ", "2105", 0);
-        Truck truck3 = new Truck("КАМАЗ", "2105", 0);
-        Truck truck4 = new Truck("КАМАЗ", "2105", 0);
+        Truck trKamaz = new Truck("Камаз", "55111", 0);
+        Truck trVolvo = new Truck("Volvo", "FH16", 0);
+        Truck trScania = new Truck("Scania", "Interlink", 0);
+        Truck trMaz = new Truck("МАЗ", "5440М9", 0);
 
-        Bus bus1 = new Bus("ЛИАЗ", "2105", 0);
-        Bus bus2 = new Bus("ЛИАЗ", "2105", 0);
-        Bus bus3 = new Bus("ЛИАЗ", "2105", 0);
-        Bus bus4 = new Bus("ЛИАЗ", "2105", 0);
+        Bus bsLiaz = new Bus("ЛИАЗ", "4292 ", 0);
+        Bus bsKamaz = new Bus("Камаз", "6250", 0);
+        Bus bsGaz = new Bus("ГАЗель ", "27057", 0);
+        Bus bsIkarus = new Bus("Икарус", "250", 0);
 
-        car1.pitStop();
-        System.out.println(car2.bestLapTime());
-        System.out.println(car3.maxSpeed());
+        crLada.pitStop();
+        System.out.println(crKia.bestLapTime());
+        System.out.println(crBMW.maxSpeed());
 
-        truck1.pitStop();
-        System.out.println(truck2.bestLapTime());
-        System.out.println(truck3.maxSpeed());
+        trKamaz.pitStop();
+        System.out.println(trVolvo.bestLapTime());
+        System.out.println(trScania.maxSpeed());
 
-        bus1.pitStop();
-        System.out.println(bus2.bestLapTime());
-        System.out.println(bus3.maxSpeed());
+        bsLiaz.pitStop();
+        System.out.println(bsKamaz.bestLapTime());
+        System.out.println(bsGaz.maxSpeed());
 
-        Driver<Car> DriverCar = new Driver<>("DriverCar", 10, car1);
-        Driver<Truck> DriverTruck = new Driver<>("DriverTruck", 2, truck1);
-        Driver<Bus> DriverBus = new Driver<>("DriverBus", 7, bus1);
-        System.out.println(DriverCar);
-        System.out.println(DriverTruck);
-        System.out.println(DriverBus);
+        DriverB driverCar = new DriverB("DriverCar", 10, crAudi);
+        DriverC driverTruck = new DriverC("DriverTruck", 2, trMaz);
+        DriverD driverBus = new DriverD("DriverBus", 7, bsIkarus);
+        System.out.println(driverCar);
+        System.out.println(driverTruck);
+        System.out.println(driverBus);
 
     }
 }
